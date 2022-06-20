@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="daniellopes.io.newsappstarter.ui.fragments.home.HomeFragment"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_homeFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="daniellopes.io.newsappstarter.ui.fragments.favorite.FavoriteFragment"
+        android:label="Favoritos" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="daniellopes.io.newsappstarter.ui.fragments.search.SearchFragment"
+        android:label="Pesquisar" >
+        <action
+            android:id="@+id/action_searchFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="daniellopes.io.newsappstarter.ui.fragments.webview.WebViewFragment"
+        android:label="Noticia" >
+        <argument
+            android:name="article"
+            app:argType="daniellopes.io.newsappstarter.data.local.model.Article" />
+    </fragment>
+</navigation>
